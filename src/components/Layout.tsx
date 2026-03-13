@@ -2,6 +2,7 @@ import { ReactNode, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import ScrollToTop from "./ScrollToTop";
 
 const Layout = ({ children }: { children: ReactNode }) => {
   const { pathname } = useLocation();
@@ -15,6 +16,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
       <Navbar />
       <main className="flex-1 pt-20">{children}</main>
       <Footer />
+      <ScrollToTop />
     </div>
   );
 };

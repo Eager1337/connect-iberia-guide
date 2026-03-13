@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import logoFull from "@/assets/logo-full.png";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -91,6 +92,8 @@ const Navbar = () => {
               <Link to="/resources" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Resources</Link>
               <Link to="/about" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">About</Link>
 
+              <ThemeToggle />
+
               <Link
                 to="/contact"
                 className="inline-flex items-center px-5 py-2.5 rounded-lg bg-secondary text-secondary-foreground font-semibold text-sm shadow-[var(--shadow-cta)] hover:brightness-105 hover:scale-[1.02] transition-all"
@@ -100,9 +103,12 @@ const Navbar = () => {
             </div>
 
             {/* Mobile toggle */}
-            <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden p-2 text-foreground">
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+            <div className="flex items-center gap-3 lg:hidden">
+              <ThemeToggle />
+              <button onClick={() => setIsOpen(!isOpen)} className="p-2 text-foreground">
+                {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
+            </div>
           </div>
         </div>
 
