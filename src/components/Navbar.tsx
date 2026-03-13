@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "@/assets/logo.png";
+import logoFull from "@/assets/logo-full.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,13 +29,13 @@ const Navbar = () => {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
             ? "bg-card/95 backdrop-blur-md shadow-sm border-b border-border"
-            : "bg-transparent"
+            : "bg-card/80 backdrop-blur-sm"
         }`}
       >
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex items-center justify-between h-20">
             <Link to="/" className="flex-shrink-0">
-              <img src={logo} alt="Iberia Health Connect" className="h-12" />
+              <img src={logoFull} alt="Iberia Health Connect" className="h-12" />
             </Link>
 
             {/* Desktop Nav */}
@@ -93,7 +93,7 @@ const Navbar = () => {
 
               <Link
                 to="/contact"
-                className="inline-flex items-center px-5 py-2.5 rounded-lg bg-secondary text-secondary-foreground font-semibold text-sm shadow-[var(--shadow-cta)] hover:brightness-105 transition-all"
+                className="inline-flex items-center px-5 py-2.5 rounded-lg bg-secondary text-secondary-foreground font-semibold text-sm shadow-[var(--shadow-cta)] hover:brightness-105 hover:scale-[1.02] transition-all"
               >
                 Book a Free Consultation
               </Link>
