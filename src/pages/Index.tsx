@@ -5,6 +5,10 @@ import { Section, SectionLabel, SectionTitle, SectionDescription } from "@/compo
 import AnimatedCounter from "@/components/AnimatedCounter";
 import Testimonials from "@/components/Testimonials";
 import Layout from "@/components/Layout";
+import heroCoupleImg from "@/assets/hero-couple-lisbon.jpg";
+import consultationImg from "@/assets/consultation-meeting.jpg";
+import portugalCoastImg from "@/assets/portugal-coast.jpg";
+import spainTownImg from "@/assets/spain-town.jpg";
 
 const tiers = [
   {
@@ -40,33 +44,45 @@ const tiers = [
 const Index = () => {
   return (
     <Layout>
-      {/* Hero — clean, no orbs, no gradients */}
-      <section className="relative bg-primary py-28 lg:py-36">
+      {/* Hero — split layout with image */}
+      <section className="relative bg-primary pt-16">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-2xl">
-            <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-6">
-              Trusted by 200+ American families
-            </p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl text-primary-foreground leading-[1.1] mb-8 font-bold tracking-tight">
-              Your Health.{" "}
-              <span className="text-secondary">Your Move.</span>{" "}
-              Our Expertise.
-            </h1>
-            <p className="text-lg text-primary-foreground/75 leading-relaxed mb-10 max-w-lg">
-              We make healthcare <strong className="text-primary-foreground font-semibold">simple, clear, and stress-free</strong> for Americans moving to Portugal & Spain.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <CTAButton to="/contact" size="lg">
-                Book a Free 15-Minute Consultation
-              </CTAButton>
-              <CTAButton to="/portugal-vs-spain" variant="outline" size="lg" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground">
-                Compare Portugal & Spain <ArrowRight className="w-4 h-4 ml-2" />
-              </CTAButton>
+          <div className="grid lg:grid-cols-2 gap-12 items-center py-20 lg:py-28">
+            <div>
+              <div className="inline-flex items-center gap-2 bg-primary-foreground/10 rounded-full px-4 py-1.5 mb-8">
+                <span className="w-2 h-2 bg-secondary rounded-full"></span>
+                <span className="text-primary-foreground/80 text-sm">Healthcare Navigation for Americans</span>
+              </div>
+              <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] text-primary-foreground leading-[1.08] mb-8 tracking-tight">
+                Healthcare,{" "}
+                <em className="text-secondary font-normal italic">simplified</em>{" "}
+                for Americans in Portugal & Spain.
+              </h1>
+              <p className="text-lg text-primary-foreground/70 leading-relaxed mb-10 max-w-lg">
+                How does public healthcare work? Will your prescriptions transfer? We guide you through every step — calmly and clearly.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <CTAButton to="/contact" size="lg">
+                  Book a free 15-min consultation
+                </CTAButton>
+                <CTAButton to="/services" variant="outline" size="lg" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground">
+                  Explore Services <ArrowRight className="w-4 h-4 ml-2" />
+                </CTAButton>
+              </div>
             </div>
-            <div className="flex items-center gap-6 mt-12 text-primary-foreground/50 text-xs font-medium">
-              <span className="flex items-center gap-1.5"><Shield className="w-3.5 h-3.5" /> HIPAA-Aware</span>
-              <span className="flex items-center gap-1.5"><Star className="w-3.5 h-3.5 text-secondary" /> 4.9/5 Rating</span>
-              <span className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5" /> Response in 24h</span>
+            <div className="relative hidden lg:block">
+              <div className="rounded-2xl overflow-hidden shadow-2xl">
+                <img
+                  src={heroCoupleImg}
+                  alt="American couple walking through Lisbon streets"
+                  className="w-full h-[480px] object-cover"
+                />
+              </div>
+              {/* Floating card */}
+              <div className="absolute -bottom-6 -left-6 bg-card rounded-xl p-5 shadow-lg border border-border">
+                <p className="text-sm font-bold text-foreground">Expert-backed</p>
+                <p className="text-xs text-muted-foreground">U.S. · Portugal · Spain</p>
+              </div>
             </div>
           </div>
         </div>
@@ -82,35 +98,38 @@ const Index = () => {
         </div>
       </Section>
 
-      {/* Pain Points */}
+      {/* Pain Points with image */}
       <Section className="bg-muted/40">
-        <div className="max-w-3xl mx-auto text-center">
-          <SectionLabel>You're not alone in this</SectionLabel>
-          <SectionTitle className="mb-6">
-            Healthcare uncertainty is the <strong className="text-primary font-bold">#1 stressor</strong> for Americans relocating abroad.
-          </SectionTitle>
-          <SectionDescription>
-            The systems in Portugal and Spain work differently from the U.S. Access pathways, administrative timing, and prescription transfers all matter — and those details can feel overwhelming when you're already planning a move.
-          </SectionDescription>
-        </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
-          {[
-            { icon: Shield, text: "Zero prescription gaps", desc: "Keep your medications uninterrupted" },
-            { icon: Heart, text: "Public vs private — decoded", desc: "Know your options with clarity" },
-            { icon: Clock, text: "Master your first 90 days", desc: "A strategic timeline for setup" },
-            { icon: Users, text: "Choose with confidence", desc: "Portugal or Spain — we've got you" },
-          ].map((item, i) => (
-            <div
-              key={i}
-              className="bg-card rounded-xl p-7 border border-border hover:shadow-[var(--shadow-elevated)] transition-shadow duration-200"
-            >
-              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                <item.icon className="w-5 h-5 text-primary" />
-              </div>
-              <p className="font-bold text-foreground mb-1">{item.text}</p>
-              <p className="text-sm text-muted-foreground">{item.desc}</p>
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <SectionLabel>You're not alone in this</SectionLabel>
+            <SectionTitle className="mb-6">
+              Healthcare uncertainty is the <strong className="text-primary font-bold">#1 stressor</strong> for Americans relocating abroad.
+            </SectionTitle>
+            <p className="text-muted-foreground leading-relaxed mb-8">
+              The systems in Portugal and Spain work differently from the U.S. Access pathways, administrative timing, and prescription transfers all matter — and those details can feel overwhelming when you're already planning a move.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {[
+                { icon: Shield, text: "Zero prescription gaps" },
+                { icon: Heart, text: "Public vs private — decoded" },
+                { icon: Clock, text: "Master your first 90 days" },
+                { icon: Users, text: "Choose with confidence" },
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-3 p-4 bg-card rounded-lg border border-border">
+                  <item.icon className="w-5 h-5 text-primary flex-shrink-0" />
+                  <span className="text-sm font-semibold text-foreground">{item.text}</span>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+          <div className="rounded-2xl overflow-hidden">
+            <img
+              src={consultationImg}
+              alt="Healthcare consultation with expat couple"
+              className="w-full h-[400px] object-cover rounded-2xl"
+            />
+          </div>
         </div>
       </Section>
 
@@ -191,7 +210,7 @@ const Index = () => {
         <Testimonials />
       </Section>
 
-      {/* Free Call */}
+      {/* Free Call with image */}
       <Section className="bg-muted/40">
         <div className="max-w-3xl mx-auto text-center">
           <SectionLabel>Free Consultation</SectionLabel>
@@ -217,8 +236,45 @@ const Index = () => {
         </div>
       </Section>
 
-      {/* Who We Support */}
+      {/* Explore Countries with images */}
       <Section>
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <SectionLabel>Explore</SectionLabel>
+          <SectionTitle>Not sure where to start?</SectionTitle>
+        </div>
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <Link
+            to="/portugal-healthcare"
+            className="group relative rounded-2xl overflow-hidden h-72"
+          >
+            <img src={portugalCoastImg} alt="Portuguese coastal town" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+            <div className="absolute bottom-0 left-0 p-8">
+              <p className="text-white/70 text-sm mb-1">Healthcare in</p>
+              <h3 className="text-2xl font-bold text-white">Portugal</h3>
+            </div>
+          </Link>
+          <Link
+            to="/spain-healthcare"
+            className="group relative rounded-2xl overflow-hidden h-72"
+          >
+            <img src={spainTownImg} alt="Spanish Mediterranean town" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+            <div className="absolute bottom-0 left-0 p-8">
+              <p className="text-white/70 text-sm mb-1">Healthcare in</p>
+              <h3 className="text-2xl font-bold text-white">Spain</h3>
+            </div>
+          </Link>
+        </div>
+        <div className="text-center mt-8">
+          <Link to="/portugal-vs-spain" className="inline-flex items-center text-sm font-bold text-primary gap-2 hover:gap-3 transition-all">
+            Compare both countries side by side <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </Section>
+
+      {/* Who We Support */}
+      <Section className="bg-muted/40">
         <div className="max-w-3xl mx-auto text-center">
           <SectionLabel>Who We Support</SectionLabel>
           <SectionTitle className="mb-10">We support Americans at <strong className="text-primary font-bold">every stage</strong> of relocation.</SectionTitle>
@@ -235,33 +291,6 @@ const Index = () => {
           <p className="text-sm text-muted-foreground mt-10 max-w-lg mx-auto">
             You never need to disclose more than you're comfortable sharing. We approach every consultation with <strong>discretion and empathy</strong>.
           </p>
-        </div>
-      </Section>
-
-      {/* Quick Links */}
-      <Section className="bg-muted/40">
-        <div className="max-w-3xl mx-auto text-center">
-          <SectionLabel>Explore</SectionLabel>
-          <SectionTitle className="mb-10">Not sure where to start?</SectionTitle>
-          <div className="grid sm:grid-cols-3 gap-6">
-            {[
-              { to: "/portugal-vs-spain", title: "Compare Countries", desc: "Portugal and Spain side by side.", icon: Globe },
-              { to: "/portugal-healthcare", title: "Healthcare in Portugal", desc: "For Americans relocating from the U.S.", icon: Heart },
-              { to: "/spain-healthcare", title: "Healthcare in Spain", desc: "For Americans relocating from the U.S.", icon: Shield },
-            ].map((item, i) => (
-              <Link
-                key={i}
-                to={item.to}
-                className="bg-card p-8 rounded-xl border border-border hover:shadow-[var(--shadow-elevated)] transition-shadow duration-200 text-left group"
-              >
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <item.icon className="w-5 h-5 text-primary" />
-                </div>
-                <h3 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.desc}</p>
-              </Link>
-            ))}
-          </div>
         </div>
       </Section>
 
