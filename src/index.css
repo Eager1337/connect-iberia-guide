@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -46,13 +46,10 @@
     --sidebar-ring: 148 57% 27%;
 
     /* Custom tokens */
-    --hero-gradient: linear-gradient(135deg, hsl(148 57% 27%) 0%, hsl(148 40% 35%) 100%);
-    --warm-gradient: linear-gradient(135deg, hsl(40 20% 98%) 0%, hsl(46 50% 95%) 100%);
-    --cta-gradient: linear-gradient(135deg, hsl(46 96% 48%) 0%, hsl(40 96% 52%) 100%);
-    --shadow-soft: 0 4px 24px -4px hsl(148 57% 27% / 0.08);
-    --shadow-card: 0 2px 16px -2px hsl(148 57% 27% / 0.06);
-    --shadow-cta: 0 8px 32px -8px hsl(46 96% 48% / 0.4);
-    --shadow-elevated: 0 20px 60px -15px hsl(148 57% 27% / 0.15);
+    --shadow-soft: 0 2px 12px -2px hsl(148 57% 27% / 0.06);
+    --shadow-card: 0 1px 8px -1px hsl(0 0% 0% / 0.04);
+    --shadow-cta: 0 4px 16px -4px hsl(46 96% 48% / 0.3);
+    --shadow-elevated: 0 8px 24px -8px hsl(0 0% 0% / 0.08);
   }
 
   .dark {
@@ -97,7 +94,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif;
+    @apply font-heading;
   }
 }
 

@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 
 const testimonials = [
@@ -26,13 +25,9 @@ const Testimonials = () => {
   return (
     <div className="grid md:grid-cols-3 gap-8">
       {testimonials.map((t, i) => (
-        <motion.div
+        <div
           key={i}
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: i * 0.15 }}
-          className="bg-card border border-border rounded-2xl p-8 hover:shadow-[var(--shadow-elevated)] transition-all duration-300"
+          className="bg-card border border-border rounded-xl p-8 hover:shadow-[var(--shadow-elevated)] transition-shadow duration-200"
         >
           <div className="flex gap-1 mb-4">
             {Array.from({ length: t.rating }).map((_, j) => (
@@ -46,7 +41,7 @@ const Testimonials = () => {
             <p className="font-semibold text-sm text-foreground">{t.name}</p>
             <p className="text-xs text-muted-foreground">{t.location}</p>
           </div>
-        </motion.div>
+        </div>
       ))}
     </div>
   );

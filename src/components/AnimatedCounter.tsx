@@ -38,7 +38,7 @@ const AnimatedCounter = ({ end, suffix = "", prefix = "", label, duration = 2 }:
       viewport={{ once: true }}
       className="text-center"
     >
-      <div className="text-4xl lg:text-5xl font-serif text-primary font-bold">
+      <div className="text-4xl lg:text-5xl font-heading text-primary font-bold">
         {prefix}{count}{suffix}
       </div>
       <p className="text-sm text-muted-foreground mt-2 font-medium">{label}</p>

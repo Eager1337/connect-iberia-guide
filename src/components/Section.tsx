@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import { motion } from "framer-motion";
 
 interface SectionProps {
   children: ReactNode;
@@ -8,16 +7,12 @@ interface SectionProps {
 }
 
 export const Section = ({ children, className = "", id }: SectionProps) => (
-  <motion.section
+  <section
     id={id}
-    initial={{ opacity: 0, y: 24 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: "-80px" }}
-    transition={{ duration: 0.5, ease: "easeOut" }}
     className={`py-20 lg:py-28 ${className}`}
   >
     <div className="container mx-auto px-4 lg:px-8">{children}</div>
-  </motion.section>
+  </section>
 );
 
 export const SectionLabel = ({ children }: { children: ReactNode }) => (
