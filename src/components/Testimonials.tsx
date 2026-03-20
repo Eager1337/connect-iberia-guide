@@ -41,7 +41,7 @@ const Testimonials = () => {
             <p className="font-semibold text-sm text-foreground">{t.name}</p>
             <p className="text-xs text-muted-foreground">{t.location}</p>
           </div>
-        </motion.div>
+        </div>
       ))}
     </div>
   );
