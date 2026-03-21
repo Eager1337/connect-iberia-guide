@@ -41,24 +41,34 @@ const tiers = [
 const Index = () => {
   return (
     <Layout>
-      {/* Hero — clean, no orbs, no gradients */}
-      <section className="relative bg-primary py-28 lg:py-36">
-        <div className="container mx-auto px-4 lg:px-8">
+      {/* Hero with doctor background */}
+      <section className="relative bg-primary py-28 lg:py-36 overflow-hidden">
+        {/* Doctor image on the right */}
+        <div className="absolute right-0 top-0 bottom-0 w-1/2 hidden md:block">
+          <img
+            src={heroDoctors}
+            alt="Medical professionals team"
+            className="h-full w-full object-cover object-top opacity-30 lg:opacity-50"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent" />
+        </div>
+
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-2xl">
             <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-6">
               Trusted by 200+ American families
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl text-primary-foreground leading-[1.1] mb-8 font-bold tracking-tight">
-              Your Health.{" "}
-              <span className="text-secondary">Your Move.</span>{" "}
-              Our Expertise.
+              Start your{" "}
+              <span className="text-secondary">wellness</span>{" "}
+              journey now
             </h1>
             <p className="text-lg text-primary-foreground/75 leading-relaxed mb-10 max-w-lg">
               We make healthcare <strong className="text-primary-foreground font-semibold">simple, clear, and stress-free</strong> for Americans moving to Portugal & Spain.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <CTAButton to="/contact" size="lg">
-                Book a Free 15-Minute Consultation
+                Get Started
               </CTAButton>
               <CTAButton to="/portugal-vs-spain" variant="outline" size="lg" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground">
                 Compare Portugal & Spain <ArrowRight className="w-4 h-4 ml-2" />
