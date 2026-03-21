@@ -40,36 +40,60 @@ const tiers = [
 const Index = () => {
   return (
     <Layout>
-      {/* Hero — clean, no orbs, no gradients */}
-      <section className="relative bg-primary py-28 lg:py-36">
+      {/* Hero */}
+      <section className="relative bg-background py-16 lg:py-28">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-2xl">
-            <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-6">
-              Trusted by 200+ American families
-            </p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl text-primary-foreground leading-[1.1] mb-8 font-bold tracking-tight">
-              Your Health.{" "}
-              <span className="text-secondary">Your Move.</span>{" "}
-              Our Expertise.
-            </h1>
-            <p className="text-lg text-primary-foreground/75 leading-relaxed mb-10 max-w-lg">
-              We make healthcare <strong className="text-primary-foreground font-semibold">simple, clear, and stress-free</strong> for Americans moving to Portugal & Spain.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl leading-[1.1] mb-8 font-heading font-bold tracking-tight text-foreground">
+                Start your{" "}
+                <span className="text-primary">wellness</span>{" "}
+                <span className="text-secondary">Journey</span>{" "}
+                now
+              </h1>
+
+              {/* Opening Hours style info block */}
+              <div className="bg-card border border-border rounded-xl p-6 mb-8 max-w-sm">
+                <h3 className="font-heading font-bold text-foreground mb-3 text-lg">Opening Hours</h3>
+                <div className="space-y-2 text-sm text-muted-foreground">
+                  <div className="flex justify-between">
+                    <span className="font-medium text-foreground">Monday – Friday</span>
+                    <span>9:00AM – 12:00AM</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="font-medium text-foreground">Saturday – Sunday</span>
+                    <span>9:00AM – 7:00PM</span>
+                  </div>
+                </div>
+              </div>
+
               <CTAButton to="/contact" size="lg">
-                Book a Free 15-Minute Consultation
-              </CTAButton>
-              <CTAButton to="/portugal-vs-spain" variant="outline" size="lg" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground">
-                Compare Portugal & Spain <ArrowRight className="w-4 h-4 ml-2" />
+                Get Started
               </CTAButton>
             </div>
-            <div className="flex items-center gap-6 mt-12 text-primary-foreground/50 text-xs font-medium">
-              <span className="flex items-center gap-1.5"><Shield className="w-3.5 h-3.5" /> HIPAA-Aware</span>
-              <span className="flex items-center gap-1.5"><Star className="w-3.5 h-3.5 text-secondary" /> 4.9/5 Rating</span>
-              <span className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5" /> Response in 24h</span>
+
+            {/* Right side — trust indicators */}
+            <div className="hidden lg:flex flex-col items-center justify-center">
+              <div className="w-72 h-72 rounded-full bg-secondary/20 flex items-center justify-center">
+                <div className="w-56 h-56 rounded-full bg-secondary/30 flex items-center justify-center">
+                  <div className="text-center">
+                    <Heart className="w-16 h-16 text-primary mx-auto mb-4" />
+                    <p className="font-heading font-bold text-2xl text-foreground">200+</p>
+                    <p className="text-sm text-muted-foreground">Families Helped</p>
+                  </div>
+                </div>
+              </div>
+              <div className="flex items-center gap-6 mt-8 text-muted-foreground text-xs font-medium">
+                <span className="flex items-center gap-1.5"><Shield className="w-3.5 h-3.5 text-primary" /> HIPAA-Aware</span>
+                <span className="flex items-center gap-1.5"><Star className="w-3.5 h-3.5 text-secondary" /> 4.9/5 Rating</span>
+                <span className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5 text-primary" /> Response in 24h</span>
+              </div>
             </div>
           </div>
         </div>
+
+        {/* Green bottom bar like reference */}
+        <div className="absolute bottom-0 left-0 right-0 h-3 bg-primary" />
       </section>
 
       {/* Stats */}
