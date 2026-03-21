@@ -27,8 +27,8 @@ export const SectionTitle = ({ children, className = "" }: { children: ReactNode
   </h2>
 );
 
-export const SectionDescription = ({ children }: { children: ReactNode }) => (
-  <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mt-4">
+export const SectionDescription = ({ children, className = "" }: { children: ReactNode; className?: string }) => (
+  <p className={`text-lg text-muted-foreground leading-relaxed max-w-2xl mt-4 ${className}`}>
     {children}
   </p>
 );

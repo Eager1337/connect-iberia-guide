@@ -26,7 +26,7 @@ const Navbar = () => {
             <img
               src={logoFull}
               alt="Iberia Health Connect"
-              className="h-8 sm:h-10 lg:h-12 brightness-0 invert"
+              className="h-8 sm:h-10 lg:h-12"
             />
           </Link>
 
