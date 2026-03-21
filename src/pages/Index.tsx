@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { CheckCircle, ArrowRight, Heart, Shield, Users, Clock, Globe, Award, Star } from "lucide-react";
 import CTAButton from "@/components/CTAButton";
+import heroDoctors from "@/assets/hero-doctors.png";
 import { Section, SectionLabel, SectionTitle, SectionDescription } from "@/components/Section";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import Testimonials from "@/components/Testimonials";
