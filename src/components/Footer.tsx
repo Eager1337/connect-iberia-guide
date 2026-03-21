@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="space-y-5">
-            <img src={logoWhite} alt="Iberia Health Connect" className="h-14" />
+            <img src={logoFull} alt="Iberia Health Connect" className="h-14" />
             <p className="text-sm text-primary-foreground/70 leading-relaxed">
               Healthcare planning support for Americans relocating to Portugal or Spain.
             </p>
